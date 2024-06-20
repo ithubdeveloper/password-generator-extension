@@ -1,0 +1,115 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    font-size: 14px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+h2 {
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #5a67d8;
+    border: none;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '\2714';
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    color: white;
+}
+
+button {
+    padding: 10px;
+    background-color: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #434190;
+}
+
+#result {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#password {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e2e8f0;
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#copyMessage {
+    color: green;
+    margin-top: 10px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+#copyMessage.visible {
+    opacity: 1;
+}
