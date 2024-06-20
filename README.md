@@ -1,0 +1,2 @@
+# password-generator-extension
+ The Password Generator Extension enhances browsing security by allowing users to generate strong, unique passwords directly within Chrome. It offers customizable options for password complexity, including length and character types (uppercase, lowercase, numbers, symbols). Users can conveniently copy generated passwords to their clipboard or autofill them into password fields on webpages with a single click. The extension is designed to improve password management and strengthen online security practices effortlessly.
