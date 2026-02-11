@@ -1,15 +1,19 @@
-/* content.css */
-#generatePasswordButton {
-    background-color: #5a67d8;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  #generatePasswordButton:hover {
-    background-color: #434190;
-  }
-  
+#pgxQuickFillButton {
+  all: initial;
+  position: absolute;
+  z-index: 2147483647;
+  display: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: linear-gradient(160deg, #34d399, #22d3ee);
+  color: #052e2b;
+  font: 700 12px/1 "Segoe UI", "Inter", sans-serif;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(3, 7, 18, 0.24);
+}
+
+#pgxQuickFillButton:hover {
+  filter: brightness(0.95);
+}

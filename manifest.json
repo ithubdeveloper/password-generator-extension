@@ -1,32 +1,33 @@
 {
-    "manifest_version": 3,
-    "name": "Password Generator",
-    "version": "1.0",
-    "description": "Generate strong passwords based on different combinations.",
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "images/icon16.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
-      }
-    },
-    "permissions": ["activeTab", "scripting", "contextMenus"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"],
-        "css": ["content.css"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": ["libs/jquery-3.6.0.min.js"],
-        "matches": ["<all_urls>"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "Password Generator Pro",
+  "version": "2.0.0",
+  "description": "Generate secure passwords and autofill them in active form fields.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Password Generator Pro",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   }
-  
+}

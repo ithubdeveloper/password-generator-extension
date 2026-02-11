@@ -1,46 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator Pro</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Password Generator</h1>
-        <form id="passwordForm">
-            <label for="length">Password Length:</label>
-            <input type="number" id="length" name="length" min="6" max="32" value="12">
+  <main class="card" aria-live="polite">
+    <header class="card-header">
+      <p class="eyebrow">Secure Passwords</p>
+      <h1>Password Generator Pro</h1>
+    </header>
 
-            <label>
-                <input type="checkbox" id="uppercase" checked>
-                Include Uppercase Letters
-            </label>
-            <label>
-                <input type="checkbox" id="lowercase" checked>
-                Include Lowercase Letters
-            </label>
-            <label>
-                <input type="checkbox" id="numbers" checked>
-                Include Numbers
-            </label>
-            <label>
-                <input type="checkbox" id="symbols" checked>
-                Include Symbols
-            </label>
+    <section class="password-output" aria-label="Generated password">
+      <p id="password" class="password-text" title="Generated password"></p>
+      <button id="regenerate" class="icon-btn" type="button" aria-label="Generate a new password">Regenerate</button>
+    </section>
 
-            <button type="button" id="generate">Generate Password</button>
-        </form>
-        <div id="result" class="hidden">
-            <h2>Your Password:</h2>
-            <p id="password"></p>
-            <button id="copy">Copy Password</button>
-            <button id="copyAndFill">Copy & Autofill</button>
-            <p id="copyMessage" class="hidden">Password copied to clipboard!</p>
-        </div>
-    </div>
-    <script src="libs/jquery-3.6.0.min.js"></script>
-    <script src="popup.js"></script>
+    <section class="strength" aria-label="Password strength">
+      <div class="strength-row">
+        <span>Strength</span>
+        <strong id="strengthLabel">Strong</strong>
+      </div>
+      <div class="strength-track" role="presentation">
+        <div id="strengthBar" class="strength-bar"></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="control-row">
+        <label for="length">Length</label>
+        <input id="length" type="number" min="12" max="64" value="16" inputmode="numeric">
+      </div>
+      <input id="lengthRange" type="range" min="12" max="64" value="16" aria-label="Password length">
+
+      <div class="toggle-grid">
+        <label class="toggle">
+          <input type="checkbox" id="uppercase" checked>
+          <span>Uppercase</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="lowercase" checked>
+          <span>Lowercase</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="numbers" checked>
+          <span>Numbers</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="symbols" checked>
+          <span>Symbols</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="copyBtn" class="btn primary" type="button">Copy</button>
+      <button id="autofillBtn" class="btn secondary" type="button">Autofill Active Field</button>
+      <button id="copyFillBtn" class="btn accent" type="button">Copy + Autofill</button>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+  </main>
+
+  <script src="popup.js"></script>
 </body>
 </html>

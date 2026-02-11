@@ -1,41 +1,45 @@
-# Password Generator Extension
+# Password Generator Pro (Chrome Extension)
 
-The Password Generator Extension enhances browsing security by allowing users to generate strong, unique passwords directly within Chrome. It offers customizable options for password complexity, including length and character types (uppercase, lowercase, numbers, symbols). Users can conveniently copy generated passwords to their clipboard or autofill them into password fields on webpages with a single click. The extension is designed to improve password management and strengthen online security practices effortlessly.
+A modern Chrome extension that generates strong passwords and autofills them into the active page field.
 
-## Features
+## Highlights
 
-- Generate strong passwords based on user-defined criteria (length, character types).
-- Copy generated passwords to the clipboard.
-- Autofill passwords into password fields on webpages.
-- Simple and intuitive user interface.
+- Secure password generation with `crypto.getRandomValues`.
+- Minimum password length locked to `12` characters.
+- Mixed character sets supported: uppercase, lowercase, numbers, and symbols.
+- Autofill targets the active editable field first, then falls back to password and password-like fields.
+- Framework-friendly autofill events (`input` and `change`) for better compatibility.
+- Inline quick action near focused fields: **Use Generated Password**.
+- Persistent settings using `chrome.storage.sync`.
 
-## Installation
+## Install (Developer Mode)
 
-To install the extension in Chrome:
-
-1. Download or clone this repository.
-2. Open Chrome and go to `chrome://extensions/`.
-3. Enable "Developer mode" in the top right corner.
-4. Click on "Load unpacked" and select the directory where the extension files are located.
+1. Clone or download this repository.
+2. Open Chrome and navigate to `chrome://extensions`.
+3. Enable **Developer mode**.
+4. Click **Load unpacked** and select this project folder.
 
 ## Usage
 
-1. Click on the extension icon in the Chrome toolbar to open the password generator popup.
-2. Adjust the password length and select the desired character types (uppercase, lowercase, numbers, symbols).
-3. Click "Generate Password" to create a new password.
-4. Use the "Copy Password" button to copy the generated password to the clipboard.
-5. Optionally, use the "Copy & Autofill" button to copy the password and automatically fill it into the currently focused password field on a webpage.
+1. Open the extension popup.
+2. Set length (`12-64`) and character options.
+3. Click **Regenerate** to produce a new password.
+4. Use:
+   - **Copy** to copy password.
+   - **Autofill Active Field** to fill the selected page field.
+   - **Copy + Autofill** for both actions.
 
-## Development
+## Notes
 
-This extension uses JavaScript, HTML, CSS, and the Chrome Extension API for functionality. 
+- Some restricted pages (such as `chrome://` pages) block content scripts and autofill.
+- For best results, click into the field you want to fill before using autofill.
+
+## Tech
+
+- Manifest V3
+- Vanilla JavaScript (no jQuery dependency)
+- HTML + CSS
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Built using jQuery for DOM manipulation and event handling.
-- Icon made by [Author](https://icons8.com/) from [www.icons8.com]()
-
+MIT. See `LICENSE`.
