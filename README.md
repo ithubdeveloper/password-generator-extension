@@ -1,15 +1,16 @@
-# Password Generator Pro (Chrome Extension)
+# Password Generator Pro - Chrome Password Generator Extension
 
-A modern Chrome extension that generates strong passwords and autofills them into the active page field.
+Password Generator Pro is a Chrome extension for secure password generation, password autofill, and password visibility toggle support on web forms.
 
 ## Highlights
 
 - Secure password generation with `crypto.getRandomValues`.
 - Minimum password length locked to `12` characters.
 - Mixed character sets supported: uppercase, lowercase, numbers, and symbols.
-- Autofill targets the active editable field first, then falls back to password and password-like fields.
+- Autofill targets password fields only.
 - Framework-friendly autofill events (`input` and `change`) for better compatibility.
-- Inline quick action near focused fields: **Use Generated Password**.
+- Inline quick action near focused password fields: **Use Generated Password**.
+- Password eye toggle on page password fields (only shown when the field has a value).
 - Persistent settings using `chrome.storage.sync`.
 
 ## Install (Developer Mode)
@@ -39,6 +40,27 @@ A modern Chrome extension that generates strong passwords and autofills them int
 - Manifest V3
 - Vanilla JavaScript (no jQuery dependency)
 - HTML + CSS
+
+## SEO Keywords
+
+Use these keywords in your Chrome Web Store listing and repository description/topics:
+
+- chrome password generator
+- secure password generator extension
+- password autofill chrome extension
+- password visibility toggle
+- strong password creator
+- random password generator
+
+## Chrome Web Store SEO Pack
+
+See `/Users/saqib/Github/password-generator-extension/docs/chrome-web-store-seo.md` for ready-to-use:
+
+- SEO title ideas
+- short description
+- long description
+- keyword list
+- publish checklist
 
 ## License
 

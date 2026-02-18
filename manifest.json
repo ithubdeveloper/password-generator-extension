@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Password Generator Pro",
   "version": "2.0.0",
-  "description": "Generate secure passwords and autofill them in active form fields.",
+  "description": "Generate strong secure passwords, autofill password fields, and use an eye toggle to show or hide passwords on websites.",
   "action": {
     "default_popup": "popup.html",
     "default_title": "Password Generator Pro",
