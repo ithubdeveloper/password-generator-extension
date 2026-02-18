@@ -30,6 +30,14 @@ Password Generator Pro is a Chrome extension for secure password generation, pas
    - **Autofill Active Field** to fill the selected page field.
    - **Copy + Autofill** for both actions.
 
+## Screenshots
+
+![Popup Overview](docs/screenshots/01-popup-overview.png)
+![Autofill Password Field](docs/screenshots/02-autofill-password-field.png)
+![Password Eye Toggle](docs/screenshots/03-eye-toggle.png)
+
+Note: these are template screenshots in store-safe dimensions (`1280x800`). Replace them with real product screenshots before final Chrome Web Store submission.
+
 ## Notes
 
 - Some restricted pages (such as `chrome://` pages) block content scripts and autofill.
