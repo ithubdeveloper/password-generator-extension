@@ -284,24 +284,16 @@ async function injectAutofillScript(tabId, password) {
         if (!(el instanceof HTMLElement)) {
           return false;
         }
-        if (el.isContentEditable) {
-          return true;
-        }
-        if (el instanceof HTMLTextAreaElement) {
-          return !el.readOnly && !el.disabled;
-        }
         if (el instanceof HTMLInputElement) {
           const type = (el.type || "text").toLowerCase();
-          return !el.readOnly && !el.disabled && !blockedTypes.has(type);
+          return !el.readOnly && !el.disabled && !blockedTypes.has(type) && type === "password";
         }
         return false;
       };
 
       const setValue = (el, v) => {
-        if (el.isContentEditable) {
-          el.textContent = v;
-        } else if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
-          const proto = el instanceof HTMLTextAreaElement ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+        if (el instanceof HTMLInputElement) {
+          const proto = HTMLInputElement.prototype;
           const descriptor = Object.getOwnPropertyDescriptor(proto, "value");
           if (descriptor && typeof descriptor.set === "function") {
             descriptor.set.call(el, v);
@@ -319,12 +311,11 @@ async function injectAutofillScript(tabId, password) {
         return { success: true, target: active.name || active.id || active.tagName.toLowerCase() };
       }
 
-      const candidates = Array.from(document.querySelectorAll("input,textarea,[contenteditable='true']"));
-      const chosen = candidates.find((el) => editable(el) && (el.type || "").toLowerCase() === "password")
-        || candidates.find((el) => editable(el));
+      const candidates = Array.from(document.querySelectorAll("input[type='password']"));
+      const chosen = candidates.find((el) => editable(el));
 
       if (!chosen) {
-        return { success: false, error: "No editable field available for autofill." };
+        return { success: false, error: "No password field available for autofill." };
       }
 
       setValue(chosen, value);
