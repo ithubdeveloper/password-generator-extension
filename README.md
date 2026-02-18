@@ -54,7 +54,7 @@ Use these keywords in your Chrome Web Store listing and repository description/t
 
 ## Chrome Web Store SEO Pack
 
-See `/Users/saqib/Github/password-generator-extension/docs/chrome-web-store-seo.md` for ready-to-use:
+See `docs/chrome-web-store-seo.md` for ready-to-use:
 
 - SEO title ideas
 - short description
